@@ -1,125 +1,179 @@
 <html>
 <head>
 <title>Growth Hackers - Digital Marketing Agency</title>
-<body bgcolor="Pink">
+<style>
+body {
+font-family: 'Segoe UI', sans-serif;
+margin: 0;
+background: linear-gradient(to right, #ffe6f0, #fff);
+}
+header {
+background: linear-gradient(45deg, #ff4da6, #ff1a75);
+color: white;
+padding: 20px;
+text-align: center;
+}
+nav a {
+color: white;
+margin: 0 12px;
+text-decoration: none;
+font-weight: bold;
+position: relative;
+cursor: pointer;
+}
+nav a::after {
+content: '';
+width: 0%;
+height: 2px;
+background: white;
+position: absolute;
+left: 0;
+bottom: -5px;
+transition: 0.3s;
+}
+nav a:hover::after { width: 100%; }
+section {
+display: none;
+padding: 30px;
+animation: fadeSlide 0.5s ease;
+}
+.active { display: block; }
+@keyframes fadeSlide {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+img {
+width: 320px;
+border-radius: 12px;
+transition: transform 0.3s;
+}
+img:hover { transform: scale(1.05); }
+ul li {
+background: white;
+margin: 10px 0;
+padding: 12px;
+border-radius: 8px;
+box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+transition: 0.3s;
+}
+ul li:hover {
+transform: translateX(10px);
+background: #ffe6f0;
+}
+table {
+width: 85%;
+margin: auto;
+border-collapse: collapse;
+background: white;
+border-radius: 10px;
+overflow: hidden;
+}
+th, td {
+padding: 12px;
+text-align: center;
+}
+th {
+background: #ff80bf;
+color: white;
+}
+tr:hover { background: #ffe6f0; }
+button {
+background: linear-gradient(45deg, #ff4da6, #ff1a75);
+color: white;
+border: none;
+padding: 12px 18px;
+cursor: pointer;
+border-radius: 25px;
+transition: 0.3s;
+}
+button:hover { transform: scale(1.1); }
+input {
+padding: 10px;
+width: 250px;
+border-radius: 20px;
+border: 1px solid #ccc;
+transition: 0.3s;
+}
+input:focus {
+border-color: #ff4da6;
+outline: none;
+box-shadow: 0 0 8px pink;
+}
+footer {
+text-align: center;
+background: #ff4da6;
+color: white;
+padding: 12px;
+margin-top: 20px;
+}
+</style>
 </head>
 <body>
 <header>
-    <h1>Growth Hackers</h1>
-    <nav>
-        <a href="#home">Home</a> |
-        <a href="#services">Services</a> |
-        <a href="#pricing">Pricing</a> |
-        <a href="#stats">Stats</a> |
-        <a href="#newsletter">Newsletter</a>
-    </nav>
+<h1>🚀 Growth Hackers</h1>
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('services')">Services</a>
+<a onclick="showSection('pricing')">Pricing</a>
+<a onclick="showSection('stats')">Stats</a>
+<a onclick="showSection('newsletter')">Newsletter</a>
+</nav>
 </header>
-
-<hr>
-<section id="home">
-    <h2>Grow Faster with Data-Driven Marketing</h2>
-    <p>We help brands scale using proven digital marketing strategies.</p>
-    <p><a href="#services">Get Started</a></p>
+<section id="home" class="active">
+<h2>Grow Faster with Data-Driven Marketing</h2>
+<img src="https://growthhackers.digital/wp-content/uploads/2024/05/Group-40125-4.png">
+<p>We help brands scale using proven digital marketing strategies.</p>
 </section>
-
-<hr>
-
-
 <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-        <li>Search Engine Optimization (SEO)</li>
-        <li>Social Media Marketing</li>
-        <li>Pay-Per-Click Advertising</li>
-        <li>Email Marketing Campaigns</li>
-        <li>Content Marketing Strategy</li>
-    </ul>
+<h2>Our Services</h2>
+<ul>
+<li>🔍 Search Engine Optimization (SEO)</li>
+<li>📱 Social Media Marketing</li>
+<li>💰 Pay-Per-Click Advertising</li>
+<li>📧 Email Marketing Campaigns</li>
+<li>✍ Content Marketing Strategy</li>
+</ul>
 </section>
-
-<hr>
 <section id="pricing">
-    <h2>Service Packages</h2>
-
-    <table border="1">
-        <tr>
-            <th>Features</th>
-            <th>Starter</th>
-            <th>Growth</th>
-            <th>Elite</th>
-        </tr>
-
-        <tr>
-            <td>SEO Optimization</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-
-        <tr>
-            <td>Social Media Management</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-
-        <tr>
-            <td>Paid Ads</td>
-            <td>✖</td>
-            <td>✔</td>
-            <td>✔</td>
-        </tr>
-
-        <tr>
-            <td>Email Marketing</td>
-            <td>✖</td>
-            <td>✖</td>
-            <td>✔</td>
-        </tr>
-
-        <tr>
-            <td>Price</td>
-            <td>$199/month</td>
-            <td>$399/month</td>
-            <td>$699/month</td>
-        </tr>
-    </table>
-
+<h2>Service Packages</h2>
+<table>
+<tr>
+<th>Features</th>
+<th>Starter</th>
+<th>Growth</th>
+<th>Elite</th>
+</tr>
+<tr><td>SEO</td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><td>Social Media</td><td>✔</td><td>✔</td><td>✔</td></tr>
+<tr><td>Paid Ads</td><td>✖</td><td>✔</td><td>✔</td></tr>
+<tr><td>Email</td><td>✖</td><td>✖</td><td>✔</td></tr>
+<tr><td><b>Price</b></td><td>$199</td><td>$399</td><td>$699</td></tr>
+</table>
 </section>
-
-<hr>
-
 <section id="stats">
-    <h2>Our Achievements</h2>
-
-    <p>✔ Clients Served: 500+</p>
-    <p>✔ Campaigns Executed: 1200+</p>
-    <p>✔ Revenue Generated: $1M+</p>
-
+<h2>Our Achievements</h2>
+<p>✔ Clients Served: 500+</p>
+<p>✔ Campaigns Executed: 1200+</p>
+<p>✔ Revenue Generated: $1M+</p>
 </section>
-
-<hr>
-
 <section id="newsletter">
-    <h2>Subscribe to Our Newsletter</h2>
-
-    <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" required><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" required><br><br>
-
-        <button type="submit">Subscribe</button>
-    </form>
-
+<h2>Subscribe</h2>
+<form>
+<input type="text" placeholder="Your Name" required><br><br>
+<input type="email" placeholder="Your Email" required><br><br>
+<button>Subscribe</button>
+</form>
 </section>
-
-<hr>
-
 <footer>
-    <p>© 2026 Growth Hackers</p>
-    <p>Email: contact@growthhackers.com</p>
+<p>© 2026 Growth Hackers</p>
 </footer>
-
+<script>
+function showSection(id) {
+document.querySelectorAll("section").forEach(sec => {
+sec.classList.remove("active");
+});
+document.getElementById(id).classList.add("active");
+}
+</script>
 </body>
 </html>
