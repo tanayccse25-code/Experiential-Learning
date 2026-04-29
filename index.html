@@ -152,9 +152,9 @@ margin-top: 20px;
 </section>
 <section id="stats">
 <h2>Our Achievements</h2>
-<p>✔ Clients Served: 500+</p>
-<p>✔ Campaigns Executed: 1200+</p>
-<p>✔ Revenue Generated: $1M+</p>
+<p>✔ Clients Served: <span class="counter" data-target="500">0</span>+</p>
+<p>✔ Campaigns Executed: <span class="counter" data-target="1200">0</span>+</p>
+<p>✔ Revenue Generated: $<span class="counter" data-target="1000000">0</span>+</p>
 </section>
 <section id="newsletter">
 <h2>Subscribe</h2>
@@ -173,7 +173,33 @@ document.querySelectorAll("section").forEach(sec => {
 sec.classList.remove("active");
 });
 document.getElementById(id).classList.add("active");
+if (id === "stats") {
+startCounter();
 }
+}
+function startCounter() {
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+counter.innerText = "0";
+let target = +counter.getAttribute("data-target");
+let count = 0;
+let increment = target / 100;
+function updateCount() {
+count += increment;
+if (count < target) {
+counter.innerText = Math.floor(count);
+requestAnimationFrame(updateCount);
+} else {
+counter.innerText = target;
+}
+}
+updateCount();
+});
+}
+document.querySelector("form").addEventListener("submit", function(e){
+e.preventDefault();
+alert("✅ Successfully Subscribed!");
+});
 </script>
 </body>
 </html>
